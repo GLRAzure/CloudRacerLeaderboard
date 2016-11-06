@@ -1,3 +1,3 @@
-﻿# CloudRacer_LeaderBoard
+﻿# CloudRacer Leaderboard
 
 
