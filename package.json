@@ -4,7 +4,7 @@
   "description": "CloudRacerLB",
   "main": "app.js",
   "author": {
-    "name": "jaerrett",
+    "name": "Jason Errett",
     "email": "jaerrett@microsoft.com"
   },
   "dependencies": {
