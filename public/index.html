@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,17 +16,17 @@
         .controller('lb', function ($scope, $interval) {
             $scope.data = "DATA WILL GO HERE";
             var socket = io.connect();
-            // Ask client (browser input box) to enter text
+             // Ask client (browser input box) to enter text
             function getLeaderList() {
                 socket.emit('getleaders', 'all');
             }
             
             // Builds the HTML Table out of myList.
-            function buildHtmlTable(selector) {
+            function buildHtmlTable(selector, myList) {
                 var columns = addAllColumnHeaders(myList, selector);
 
                 for (var i = 0 ; i < myList.length ; i++) {
-                    var row$ = $('<tr/>');
+,                    var row$ = $('<tr/>');
                     for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
                         var cellValue = myList[i][columns[colIndex]];
 
@@ -69,7 +67,7 @@
                 console.log(JSON.stringify(data));
                 $scope.data = data;
                 
-                buildHtmlTable('#leaderDataTable');
+                buildHtmlTable('#leaderDataTable', data);
             });
             
             $interval(getLeaderList, 1000);
