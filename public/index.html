@@ -68,6 +68,7 @@
             socket.on('displayleaders', function (data) {
                 console.log('leaders received.');
                 console.log(JSON.stringify(data));
+                console.log(data);
                 $scope.data = data;
                 
                 $("#leaderdiv").append("<table id='leaderDataTable' border='1'></table>");
