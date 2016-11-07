@@ -37,7 +37,7 @@ function getLeaderBoard() {
     sql.connect(config.mssql, function (err) {
         var request = new sql.Request();
         
-        var query = 'select top 10 * from dbo.raceResults where distance is not null order by distance desc';
+        var query = 'select top 10 playerName, convert(varchar,startTime,109) as startTime, convert(varchar,endTime,109) as endTime, distance, maxSpeed, maxAcceleration from dbo.raceResults where distance is not null order by distance desc';
         request.query(query, function (err, rs) {
             if (err) {
                 console.log(err);
