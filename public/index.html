@@ -70,14 +70,14 @@
                 $scope.data = data;
                 
                 $("#leaderDataTable").remove();
-                $("#leaderdiv").append("<h2>Distance Leaders</h2><table id='leaderDataTable' border='1'></table>");
+                $("#leaderdiv").prepend("<table id='leaderDataTable' border='1'></table>");
                 buildHtmlTable('#leaderDataTable', data);
 
                 var speedsters = [].slice.call(data).sort(function(a,b) {
                     return parseFloat(b.maxSpeed) - parseFloat(a.maxSpeed);
                 });
                 $("#speederDataTable").remove();
-                $("#speeddiv").append("<h2>Speed Leaders</h2><table id='speederDataTable' border='1'></table>");
+                $("#speeddiv").prepend("<table id='speederDataTable' border='1'></table>");
                 buildHtmlTable('#speederDataTable', speedsters);
             });
             
@@ -89,7 +89,9 @@
 <body>
     <h1>Cloud Racer Leaders</h1>
     <div ng-app='crleaderboard'>
+        <h2>Distance Leaders</h2> 
         <div ng-controller="lb" id="leaderdiv"/>
+        <h2>Speed Leaders</h2> 
         <div ng-controller="lb" id="speeddiv"/>
     </div>
     <table border='1'>
