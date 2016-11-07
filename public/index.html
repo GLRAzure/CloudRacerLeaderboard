@@ -69,14 +69,14 @@
                 console.log(data);
                 $scope.data = data;
                 
-                $("#leaderdiv").remove();
+                $("#leaderDataTable").remove();
                 $("#leaderdiv").append("<table id='leaderDataTable' border='1'></table>");
                 buildHtmlTable('#leaderDataTable', data);
 
                 var speedsters = [].slice.call(data).sort(function(a,b) {
                     return parseFloat(b.maxSpeed) - parseFloat(a.maxSpeed);
                 });
-                $("#speeddiv").remove();
+                $("#speederDataTable").remove();
                 $("#speeddiv").append("<table id='speederDataTable' border='1'></table>");
                 buildHtmlTable('#speederDataTable', speedsters);
             });
