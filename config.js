@@ -3,7 +3,7 @@ var config = {}
 config.tablestorage = {
 	tableName: "cloudracertelemetry",
 	accountName: "cloudracerstorage",
-	accountKey: "p+RE6nrOJ6kOqxwNNJYOAgJLxq5Y4rmkOooeTKLni09GcQdXrZoq0JDxCJl9zWu4LmZIsskVNJ6qUsTzzmG/Ug=="
+	accountKey: "Gt3CzZKNAK4rDcDEBwhICAfPmKV7HWyr8nS+FO2sIZ21IE8z8EzfO4eq3jb1+5viaA0B+VbgWmui2BJzlQYODw=="
 }
 
 config.mssql = {
