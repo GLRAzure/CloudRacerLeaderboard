@@ -71,6 +71,12 @@
                 $scope.data = data;
                 
                 buildHtmlTable('#leaderDataTable', data);
+
+                var speedsters = data;
+                speedsters.sort(function(a,b) {
+                    return parseFloat(b.maxSpeed) - parseFloat(a.maxSpeed);
+                });
+                buildHtmlTable('#speeddiv', speedsters);
             });
             
             $interval(getLeaderList, 1000);
@@ -83,6 +89,8 @@
     <div ng-app='crleaderboard'>
         <h2>Distance Leaders</h2> 
         <div ng-controller="lb" id="leaderdiv"/>
+        <h2>Speed Leaders</h2> 
+        <div ng-controller="lb" id="speeddiv"/>
     </div>
     <table border='1'>
 
