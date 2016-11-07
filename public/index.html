@@ -73,8 +73,7 @@
                 $("#leaderdiv").append("<table id='leaderDataTable' border='1'></table>");
                 buildHtmlTable('#leaderDataTable', data);
 
-                var speedsters = data;
-                speedsters.sort(function(a,b) {
+                var speedsters = data.sort(function(a,b) {
                     return parseFloat(b.maxSpeed) - parseFloat(a.maxSpeed);
                 });
                 $("#speeddiv").append("<table id='speederDataTable' border='1'></table>");
