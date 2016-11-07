@@ -25,7 +25,7 @@
             // Builds the HTML Table out of myList.
             function buildHtmlTable(selector, myList) {
                 $(selector).remove();
-                $("#leaderdiv").append("<table id='leaderDataTable' border='1'></table>");
+                
                 var columns = addAllColumnHeaders(myList, selector);
 
                 for (var i = 0 ; i < myList.length ; i++) {
@@ -70,13 +70,15 @@
                 console.log(JSON.stringify(data));
                 $scope.data = data;
                 
+                $("#leaderdiv").append("<table id='leaderDataTable' border='1'></table>");
                 buildHtmlTable('#leaderDataTable', data);
 
                 var speedsters = data;
                 speedsters.sort(function(a,b) {
                     return parseFloat(b.maxSpeed) - parseFloat(a.maxSpeed);
                 });
-                buildHtmlTable('#speeddiv', speedsters);
+                $("#speeddiv").append("<table id='speederDataTable' border='1'></table>");
+                buildHtmlTable('#speederDataTable', speedsters);
             });
             
             $interval(getLeaderList, 1000);
