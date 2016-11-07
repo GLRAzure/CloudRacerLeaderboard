@@ -24,7 +24,7 @@
             // Builds the HTML Table out of myList.
             function buildHtmlTable(selector, myList) {
                 $(selector).remove();
-                $("leaderdiv").append("<table id='leaderDataTable' border='1'></table>");
+                $("#leaderdiv").append("<table id='leaderDataTable' border='1'></table>");
                 var columns = addAllColumnHeaders(myList, selector);
 
                 for (var i = 0 ; i < myList.length ; i++) {
